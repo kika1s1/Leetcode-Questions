@@ -9,12 +9,12 @@ class Solution:
         for num in lists:
             while num:
                 nums.append(num.val)
-                num = num.next
+                num =  num.next
         nums.sort()
-        head = ListNode()
-        temp = head
+        dummyNode = ListNode()
+        temp = dummyNode
         for num in nums:
-            new_node = ListNode(num)
-            temp.next =  new_node 
-            temp = new_node
-        return head.next
+            node = ListNode(num)
+            temp.next = node
+            temp = node
+        return dummyNode.next
