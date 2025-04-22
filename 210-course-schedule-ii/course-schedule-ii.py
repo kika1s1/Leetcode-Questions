@@ -2,23 +2,24 @@ class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         graph = defaultdict(list)
         incoming_edge = [0] * numCourses
-        for course, pre in prerequisites:
-            graph[pre].append(course)
-            incoming_edge[course] +=1
-        visited = set()
-        ans = []
+        for u, v in prerequisites:
+            graph[v].append(u)
+            incoming_edge[u] +=1
         queue = deque()
-        for index in range(len(incoming_edge)):
-            if incoming_edge[index] == 0:
+        for index, income_edge in enumerate(incoming_edge):
+            if income_edge == 0:
                 queue.append(index)
+        order = []
         while queue:
             node = queue.popleft()
-            visited.add(node)
-            ans.append(node)
+            order.append(node)
             for nei in graph[node]:
                 incoming_edge[nei] -=1
-                if nei not in visited and incoming_edge[nei] == 0:
+                if incoming_edge[nei]  == 0:
                     queue.append(nei)
-        if len(visited) == numCourses:
-            return ans
+        if len(order) == numCourses:
+            return order
         return []
+    
+
+
