@@ -1,31 +1,29 @@
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-        incoming_edges = [0] * len(graph)
-        adj_graph = defaultdict(list)
-        for index, edges in enumerate(graph):
-            incoming_edges[index] +=len(edges)
+        adj_list = defaultdict(list)
+        outdegree = [0] * len(graph)
+        for node,  edges in enumerate(graph):
+            outdegree[node] = len(edges)
             for edge in edges:
-                adj_graph[edge].append(index)
-
-        ans = []
+                adj_list[edge].append(node)
+                # outdegree[node] +=1
+        print(adj_list)
         queue = deque()
-        for index, n_incoming in enumerate(incoming_edges):
-            if n_incoming == 0:
-                queue.append(index)
+        for node, outdeg in enumerate(outdegree):
+            if outdeg == 0:
+                queue.append(node)
+        safeNode = [False for node in range(len(graph))]
         while queue:
             node = queue.popleft()
-            ans.append(node)
-            for nei in adj_graph[node]:
-                incoming_edges[nei] -=1
-                if incoming_edges[nei] == 0:
+            safeNode[node] = True
+            for nei in adj_list[node]:
+                outdegree[nei] -=1
+                if outdegree[nei] == 0:
                     queue.append(nei)
-        return sorted(ans)
-
-            
+        return [node for node, is_safe in enumerate(safeNode) if is_safe == True]
 
 
 
-"""
-deque([5, 6])
-defaultdict(<class 'list'>, {0: [1, 2], 1: [2, 3], 2: [5], 3: [0], 4: [5]})
-"""
+
+    
+    
