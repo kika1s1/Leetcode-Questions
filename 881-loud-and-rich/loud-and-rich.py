@@ -1,14 +1,17 @@
 class Solution:
     def loudAndRich(self, richer: List[List[int]], quiet: List[int]) -> List[int]:
         graph  = defaultdict(list)
-        ans  =[i for i in range(len(quiet))]
+        ans  =[None for i in range(len(quiet))]
         for a, b in richer:
             graph[b].append(a)
-        @cache
-        def dfs(node, index):
-            ans[index] = node if quiet[ans[index]] > quiet[node]  else ans[index]
-            for nei in graph[node]:
-                dfs(nei, index)
+        def dfs(node):
+            if ans[node] is None:
+                ans[node] = node
+                for nei in graph[node]:
+                    cand = dfs(nei)
+                    if quiet[cand] < quiet[ans[node]]:
+                        ans[node] = cand
+            return ans[node]
         for node in range(len(quiet)):
-            dfs(node, node)
+            dfs(node)
         return ans
