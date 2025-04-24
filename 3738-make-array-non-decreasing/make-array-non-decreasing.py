@@ -1,9 +1,9 @@
 class Solution:
     def maximumPossibleSize(self, nums: List[int]) -> int:
-        stack = []
+        prev = nums[0]
+        cnt = 0
         for num in nums:
-            if not stack:
-                stack.append(num)
-            elif stack[-1] <= num:
-                stack.append(num)
-        return len(stack)
+            if prev <= num:
+                prev = num
+                cnt +=1
+        return cnt
