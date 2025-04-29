@@ -1,16 +1,14 @@
 class Solution:
     def smallestChair(self, times: List[List[int]], targetFriend: int) -> int:
-        target_time = times[targetFriend]
-        times.sort()
-
-        n = len(times)
-        chair_time = [0] * n
-
-        for time in times:
-            for i in range(n):
-                if chair_time[i] <= time[0]:
-                    chair_time[i] = time[1]
-                    if time == target_time:
-                        return i
-                    break
-        return 0
+        max_chair, heap, empty_chairs = 0, [], []
+        for i in sorted(range(len(times)), key = lambda i: times[i][0]):
+            while heap and heap[0][0] <= times[i][0]:
+                heappush(empty_chairs, heappop(heap)[1])
+            if empty_chairs:
+                curr_chair = heappop(empty_chairs)
+            else:
+                curr_chair = max_chair
+                max_chair += 1
+            if i == targetFriend:
+                return curr_chair
+            heappush(heap, (times[i][1], curr_chair))
