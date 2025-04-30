@@ -9,13 +9,13 @@ class Solution:
         result = []
         def dfs(node, path):
             if node: 
-                new_path = path + str(node.val)
+                path = path + str(node.val)
                 if node.left or node.right:
-                    new_path += "->"
-                    dfs(node.left, new_path)
-                    dfs(node.right, new_path)
+                    path += "->"
+                    dfs(node.left, path)
+                    dfs(node.right, path)
                 else:
-                    result.append(new_path)
+                    result.append(path)
                     return 
         dfs(root, "")
         return result
