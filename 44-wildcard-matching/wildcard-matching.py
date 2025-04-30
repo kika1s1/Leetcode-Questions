@@ -1,0 +1,17 @@
+class Solution:
+    def isMatch(self, s: str, p: str) -> bool:
+        @cache
+        def dfs(index1, index2):
+            if index1 == len(s) and index2 == len(p):
+                return True
+            if index1 > len(s) or index2 >= len(p):
+                return False
+            if p[index2] == "*":
+                return dfs(index1+1, index2) or dfs(index1+1, index2+1) or dfs(index1, index2+1)
+            elif p[index2] == "?":
+                return dfs(index1+1, index2+1)
+            elif index1 < len(s) and p[index2] !=s[index1]:
+                return False
+            else:
+                return dfs(index1+1, index2+1)
+        return dfs(0, 0)
