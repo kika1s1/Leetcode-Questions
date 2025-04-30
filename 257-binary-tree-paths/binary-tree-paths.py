@@ -16,5 +16,6 @@ class Solution:
                     dfs(node.right, new_path)
                 else:
                     result.append(new_path)
+                    return 
         dfs(root, "")
         return result
