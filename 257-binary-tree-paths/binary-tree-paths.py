@@ -9,7 +9,7 @@ class Solution:
         result = []
         def dfs(node, path):
             if node: 
-                path = path + str(node.val)
+                path += str(node.val)
                 if node.left or node.right:
                     path += "->"
                     dfs(node.left, path)
