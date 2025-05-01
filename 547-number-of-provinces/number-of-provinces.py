@@ -1,7 +1,7 @@
 class UnionFind:
     def __init__(self, n):
         self.parent = [i for i in range(n)]
-        self.rank = [0 for _ in range(n)]
+        self.size = [1 for _ in range(n)]
 
     def find(self, u):
         if self.parent[u] != u:
@@ -13,13 +13,12 @@ class UnionFind:
         p_v = self.find(v)
         if p_u == p_v:
             return False
-        if self.rank[p_u] > self.rank[p_v]:
+        if self.size[p_u] > self.size[p_v]:
             self.parent[p_v] = p_u
-        elif self.rank[p_u] < self.rank[p_v]:
-            self.parent[p_u] = p_v
+            self.size[p_u] +=self.size[p_v]
         else:
             self.parent[p_v] = p_u
-            self.rank[p_u] += 1
+            self.size[p_u] += self.size[p_v]
         return True  
 
     
