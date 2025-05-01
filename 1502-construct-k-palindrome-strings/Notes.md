@@ -1,1 +1,0 @@
-<h2>construct-k-palindrome-strings Notes</h2><hr>[ Time taken: 5 m 29 s ]

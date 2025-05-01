@@ -1,1 +1,0 @@
-<h2>find-the-longest-substring-containing-vowels-in-even-counts Notes</h2><hr>[ Time taken: 1 hr 26 m 34 s ]

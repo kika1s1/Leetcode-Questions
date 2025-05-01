@@ -1,1 +1,0 @@
-<h2>running-sum-of-1d-array Notes</h2><hr>[ Time taken: 1 m 10 s ]

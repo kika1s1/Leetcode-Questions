@@ -1,1 +1,0 @@
-<h2>maximum-possible-number-by-binary-concatenation Notes</h2><hr>[ Time taken: 36 s ]

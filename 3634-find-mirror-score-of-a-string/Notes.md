@@ -1,1 +1,0 @@
-<h2>find-mirror-score-of-a-string Notes</h2><hr>[ Time taken: 36 m 17 s ]

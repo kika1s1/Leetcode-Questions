@@ -1,1 +1,0 @@
-<h2>maximum-beauty-of-an-array-after-applying-operation Notes</h2><hr>[ Time taken: 14 m 15 s ]

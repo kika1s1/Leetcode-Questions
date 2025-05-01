@@ -1,1 +1,0 @@
-<h2>minimize-xor Notes</h2><hr>[ Time taken: 44 m 53 s ]

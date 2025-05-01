@@ -1,1 +1,0 @@
-<h2>magnetic-force-between-two-balls Notes</h2><hr>[ Time taken: 5 hrs 33 m 38 s ]

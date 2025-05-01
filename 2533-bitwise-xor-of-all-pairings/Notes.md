@@ -1,1 +1,0 @@
-<h2>bitwise-xor-of-all-pairings Notes</h2><hr>[ Time taken: 3 hrs 43 m 39 s ]

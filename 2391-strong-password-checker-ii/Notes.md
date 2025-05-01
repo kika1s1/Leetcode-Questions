@@ -1,1 +1,0 @@
-<h2>strong-password-checker-ii Notes</h2><hr>[ Time taken: 8 m 22 s ]

@@ -1,1 +1,0 @@
-<h2>maximum-gap Notes</h2><hr>[ Time taken: 1 m 42 s ]

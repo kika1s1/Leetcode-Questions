@@ -1,1 +1,0 @@
-<h2>add-two-numbers Notes</h2><hr>[ Time taken: 22 m 24 s ]

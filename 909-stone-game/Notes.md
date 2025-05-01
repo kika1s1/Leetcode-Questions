@@ -1,1 +1,0 @@
-<h2>stone-game Notes</h2><hr>[ Time taken: 52 m 26 s ]

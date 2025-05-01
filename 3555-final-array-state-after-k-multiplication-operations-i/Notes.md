@@ -1,1 +1,0 @@
-<h2>final-array-state-after-k-multiplication-operations-i Notes</h2><hr>[ Time taken: 5 m 7 s ]

@@ -1,1 +1,0 @@
-<h2>divide-array-in-sets-of-k-consecutive-numbers Notes</h2><hr>[ Time taken: 24 m 16 s ]

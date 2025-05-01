@@ -1,1 +1,0 @@
-<h2>count-the-number-of-consistent-strings Notes</h2><hr>[ Time taken: 2 m 55 s ]

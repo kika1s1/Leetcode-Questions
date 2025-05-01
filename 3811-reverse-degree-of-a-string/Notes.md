@@ -1,1 +1,0 @@
-<h2>reverse-degree-of-a-string Notes</h2><hr>[ Time taken: 3 m 53 s ]
