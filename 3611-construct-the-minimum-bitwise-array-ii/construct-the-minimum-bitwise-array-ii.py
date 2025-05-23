@@ -1,21 +1,18 @@
 class Solution:
     def minBitwiseArray(self, nums: List[int]) -> List[int]:
-        # ans = []
-        # for num in nums:
-        #     if num & 1 ==0:
-        #         ans.append(-1)
-        #     else:
-        #         cnt = 0
-        #         n = num
-        #         while n & 1 == 1:
-        #             n >>=1
-        #             cnt +=1
-        #         ans.append(num -(1<< (cnt-1)))
-        # return ans
         ans = []
         for num in nums:
-            if num ==2:
+            if num == 2:
                 ans.append(-1)
                 continue
-            ans.append(num & ((num | ~(num+1)) >> 1))
+            found = False
+            for i in reversed(range(num.bit_length())):
+                if (num >> i) & 1:
+                    x = num ^ (1 << i)  
+                    if x | (x + 1) == num:
+                        ans.append(x)
+                        found = True
+                        break
+            if not found:
+                ans.append(-1)
         return ans
