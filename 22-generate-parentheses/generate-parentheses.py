@@ -3,6 +3,7 @@ class Solution:
         def solve(open, close, op, ans):
             if open == 0 and close == 0:
                 ans.append(op)
+                return 
             if open != 0:
                 solve(open - 1, close, op + '(', ans)
             if close > open:
