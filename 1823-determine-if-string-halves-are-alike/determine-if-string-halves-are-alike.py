@@ -10,7 +10,8 @@ class Solution:
                 if  char.lower() in vowels:
                     cnt +=1
         return cnt  == 0
-       
+        # time and space 
+        # O(N)  and O(1)
         """
         "tkPAdxpMfJiltOerItiv"
         """
