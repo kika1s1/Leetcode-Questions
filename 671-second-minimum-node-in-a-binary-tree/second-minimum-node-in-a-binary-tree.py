@@ -17,5 +17,5 @@ class Solution:
         dfs(root)
         if len(result) < 2:
             return -1
-        result = list(result)
-        return sorted(result)[1]
+        result.discard(min(result))
+        return min(result)
