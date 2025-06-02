@@ -1,23 +1,9 @@
-from math import prod
 class Solution:
     def checkEqualPartitions(self, nums: List[int], target: int) -> bool:
-        product = 1
-        for num in nums:
-            product *=num
-        if product != target ** 2:
-            return False
-        def backtrack(sub,  index):
-            if prod(sub) == target:
-                return True
-            if prod(sub) > target:
-                return False
-            for i in range(index, len(nums)):
-                sub.append(nums[i])
-                if backtrack(sub, i+1):
-                    return True
-                sub.pop()
-                if backtrack(sub, i+1):
-                    return True
-            return False
-        return backtrack([],  0)
-             
+      def check(sum1, sum2, nums):
+        if len(nums) == 0:
+          return sum1 == target and sum2 == target
+
+        return check(sum1 * nums[0], sum2, nums[1::]) or check(sum1, sum2 * nums[0], nums[1::])
+
+      return check(1,1,nums)
