@@ -12,10 +12,8 @@ class Solution:
         for i in range(N):
             while stack and stack[-1] <=left[i]:
                     ans.append(stack.pop())
-            if left[i] != s[i]:
-                stack.append(s[i])
-            else:
-                ans.append(s[i])
+            stack.append(s[i])
+            
         while stack:
             ans.append(stack.pop())
         return "".join(ans)
